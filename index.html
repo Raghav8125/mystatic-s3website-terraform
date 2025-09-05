@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raghav's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+      padding: 60px 20px 30px 20px;
+      text-align: center;
+      animation: fadeInDown 2s ease;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .profile-pic {
+      margin-top: 25px;
+    }
+
+    .profile-pic img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      animation: pulse 3s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .projects, .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+      50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,255,255,0.9); }
+      100% { transform: scale(1); box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>👋 Hi, I'm Raghav</h1>
+    <p>A passionate DevOps & Cloud Engineer 🚀 | Building scalable, secure, and automated systems</p>
+    
+    <!-- Profile Picture from S3 -->
+    <div class="profile-pic">
+      <img src="https://raghav-s3-bucket-2025.s3.us-east-1.amazonaws.com/profile.png" alt="Raghav's Profile Picture">
+    </div>
+  </header>
+
+  <section>
+    <h2>🌟 Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Kafka HA Setup</h3>
+        <p>Deployed Confluent Kafka in KRaft mode with TLS enabled, ensuring high availability and secure communication.</p>
+      </div>
+      <div class="card">
+        <h3>RabbitMQ Federation</h3>
+        <p>Configured downstream-to-upstream SSL-based federation for secure message brokering in an enterprise environment.</p>
+      </div>
+      <div class="card">
+        <h3>Kubernetes Clusters</h3>
+        <p>Implemented multi-context Kubernetes clusters with Istio service mesh and Prometheus monitoring stack.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>💬 Reviews</h2>
+    <div class="reviews">
+      <div class="card">
+        <p>"Raghav automated our entire deployment pipeline on Kubernetes — saving hours every week!"</p>
+        <strong>- Team Lead</strong>
+      </div>
+      <div class="card">
+        <p>"His expertise in RabbitMQ and Kafka helped us build a rock-solid messaging backbone."</p>
+        <strong>- Client Review</strong>
+      </div>
+      <div class="card">
+        <p>"Raghav is always curious and detail-oriented. He ensured our systems run smoothly in production."</p>
+        <strong>- Colleague</strong>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Raghav's Portfolio | Powered by AWS S3</p>
+  </footer>
+</body>
+</html>
